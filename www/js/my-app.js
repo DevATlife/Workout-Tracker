@@ -11,7 +11,7 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-
+  var db;
 /*------------- Delete Event (9)-----------------------*/
 $$(document).on('deleted', '.remove-callback', function(){
   var workoutId = $$(this).attr('id');
@@ -23,7 +23,7 @@ $$(document).on('deleted', '.remove-callback', function(){
 
 /*-------------------Device Ready Event ----(3)-------------*/
 $$(document).on('deviceready', function() {
-    var db;
+  
  db = window.openDatabase('workouttracker', '1.0', 'Workout Tracker', 1000000);
     createDatabase();
     getWorkouts();    
